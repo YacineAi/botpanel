@@ -23,6 +23,8 @@ botly.on("message", (senderId, message, data) => {
   if (message.recipient.id == "123123"){ // main
 
   } else if (message.recipient.id == "105785155764332"){
+    
+  } else if (message.recipient.id == "132577573157975"){
     const options = {
       url: 'https://diffy.yacinedjenidi.repl.co/webhook',
       method: 'POST',
@@ -35,8 +37,6 @@ botly.on("message", (senderId, message, data) => {
         console.log('Message forwarded successfully:', body);
       }
     });
-  } else if (message.recipient.id == "132577573157975"){
-
   } else if (message.recipient.id == "100328361810049"){
 
   }
