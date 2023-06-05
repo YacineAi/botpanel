@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT
 const bodyParser = require("body-parser");
 const Botly = require("botly");
 const botly = new Botly({
@@ -24,6 +24,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+app.listen(port || 3000, () => {
+  console.log(`App listening on port ${port}`)
+})
