@@ -18,6 +18,10 @@ app.use(bodyParser.json({
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/webhook", botly.router());
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 
 botly.on("message", (senderId, message, data) => {
   if (message.recipient.id == "123123"){ // main
@@ -28,9 +32,8 @@ botly.on("message", (senderId, message, data) => {
     const options = {
       url: 'https://diffy.yacinedjenidi.repl.co/webhook',
       method: 'POST',
-      json: { message },
+      json: { message : message },
     };
-    console.log(options)
     request(options, (error, response, body) => {
       if (error) {
         console.error('Error forwarding message:', error);
@@ -43,12 +46,10 @@ botly.on("message", (senderId, message, data) => {
   }
 });
 
-
-app.get('/', (req, res) => {
-  res.render('index');
+botly.on("postback", async (senderId, message, postback) => {
+	console.log("messBody", message);
+	console.log("postback", postback);
 });
-
-
 
 app.listen(port || 3000, () => {
   console.log(`App listening on port ${port}`)
