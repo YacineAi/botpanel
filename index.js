@@ -20,7 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/webhook", botly.router());
 
 botly.on("message", (senderId, message, data) => {
-  console.log(message)
   if (message.recipient.id == "123123"){ // main
 
   } else if (message.recipient.id == "105785155764332"){
@@ -31,6 +30,7 @@ botly.on("message", (senderId, message, data) => {
       method: 'POST',
       json: { message },
     };
+    console.log(options)
     request(options, (error, response, body) => {
       if (error) {
         console.error('Error forwarding message:', error);
