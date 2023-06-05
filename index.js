@@ -20,6 +20,26 @@ app.use("/webhook", botly.router());
 
 botly.on("message", (senderId, message, data) => {
   console.log(message)
+  if (message.recipient.id == "123123"){ // main
+
+  } else if (message.recipient.id == "105785155764332"){
+    const options = {
+      url: 'https://diffy.yacinedjenidi.repl.co/webhook',
+      method: 'POST',
+      json: { message },
+    };
+    request(options, (error, response, body) => {
+      if (error) {
+        console.error('Error forwarding message:', error);
+      } else {
+        console.log('Message forwarded successfully:', body);
+      }
+    });
+  } else if (message.recipient.id == "132577573157975"){
+
+  } else if (message.recipient.id == "100328361810049"){
+
+  }
 });
 
 
