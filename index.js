@@ -4,11 +4,11 @@ const port = process.env.PORT
 const bodyParser = require("body-parser");
 const Botly = require("botly");
 const botly = new Botly({
-    accessToken: process.env.AT,
-    verifyToken: process.env.VT,
-    webHookPath: process.env.WP,
-    notificationType: Botly.CONST.REGULAR,
-    FB_URL: 'https://graph.facebook.com/v2.6/'
+  accessToken: process.env.PAGE_ACCESS_TOKEN,
+  verifyToken: process.env.VERIFY_TOKEN,
+  webHookPath: process.env.WB_PATH,
+  notificationType: Botly.CONST.REGULAR,
+  FB_URL: "https://graph.facebook.com/v13.0/",
 });
 app.use(express.static('views'));
 app.set('view engine', 'ejs');
