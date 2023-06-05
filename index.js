@@ -18,6 +18,11 @@ app.use(bodyParser.json({
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/webhook", botly.router());
 
+botly.on("message", (senderId, message, data) => {
+  console.log(message)
+});
+
+
 app.get('/', (req, res) => {
   res.render('index');
 });
