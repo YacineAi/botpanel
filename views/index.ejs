@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Panel</title>
-   <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400;1,900&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
 </head>
 <body>
-   <h1>Hola</h1>
+
+<!-- NavBar  -->
+    <nav class="navbar navbar-expand-lg  ">
+        <div class="container-fluid">
+            
+                <a class="navbar-brand" href="#">DASHBOARD</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Settings</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+  
+<!-- NavBar  -->
+
+<!-- table -->
+
+<div class="container">
+
+    <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>QBot</td>
+            <td>1212123</td>
+            <td>50K</td>
+            <td><button type="button" class="btn btn-danger">Delete</button>
+                
+                <a href="/edit.html"><button type="button" class="btn btn-primary">Edit</button></a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>ABot</td>
+            <td>565658679</td>
+            <td>70K</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+                
+              <a href="/edit.html"><button type="button" class="btn btn-primary">Edit</button></a>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>
+
+<!-- table -->
+
+<script src="js/bootstrap.bundle.min.js"></script>  
 </body>
 </html>
