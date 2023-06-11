@@ -22,7 +22,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-
 botly.on("message", (senderId, message, data) => {
   if (message.recipient.id == "123123"){ // main
 
@@ -43,6 +42,19 @@ botly.on("message", (senderId, message, data) => {
     });
   } else if (message.recipient.id == "100328361810049"){
 
+  } else if (message.recipient.id == "107789301758297"){
+    const options = {
+      url: 'https://torjmanix.onrender.com/webhook',
+      method: 'POST',
+      json: { message : message },
+    };
+    request(options, (error, response, body) => {
+      if (error) {
+        console.error('Error forwarding message:', error);
+      } else {
+        console.log('Message forwarded successfully:', body);
+      }
+    });
   }
 });
 
@@ -69,6 +81,22 @@ botly.on("postback", async (senderId, message, postback) => {
     });
   } else if (message.recipient.id == "100328361810049"){
 
+  } else if (message.recipient.id == "107789301758297"){
+    const options = {
+      url: 'https://torjmanix.onrender.com/webhook',
+      method: 'POST',
+      json: { postback : {
+        postback,
+        message
+      } },
+    };
+    request(options, (error, response, body) => {
+      if (error) {
+        console.error('Error forwarding message:', error);
+      } else {
+        console.log('Message forwarded successfully:', body);
+      }
+    });
   }
 });
 
