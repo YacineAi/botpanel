@@ -22,84 +22,48 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+const pageData = require('./pages.json');
+
 botly.on("message", (senderId, message, data) => {
-  if (message.recipient.id == "123123"){ // main
-
-  } else if (message.recipient.id == "105785155764332"){
-    
-  } else if (message.recipient.id == "132577573157975"){
-    const options = {
-      url: 'https://diffy.yacinedjenidi.repl.co/webhook',
-      method: 'POST',
-      json: { message : message },
-    };
-    request(options, (error, response, body) => {
-      if (error) {
-        console.error('Error forwarding message:', error);
-      } else {
-        console.log('Message forwarded successfully:', body);
-      }
-    });
-  } else if (message.recipient.id == "100328361810049"){
-
-  } else if (message.recipient.id == "107789301758297"){
-    const options = {
-      url: 'https://torjmanix.onrender.com/webhook',
-      method: 'POST',
-      json: { message : message },
-    };
-    request(options, (error, response, body) => {
-      if (error) {
-        console.error('Error forwarding message:', error);
-      } else {
-        console.log('Message forwarded successfully:', body);
-      }
-    });
+  for (const page of pageData.pages) {
+    if (message.recipient.id === page.id) {
+      const options = {
+        url: page.webhook,
+        method: 'POST',
+        json: { message: message },
+      };
+      request(options, (error, response, body) => {
+        if (error) {
+          console.error('Error forwarding message:', error);
+        } else {
+          console.log('Message forwarded successfully:', body);
+        }
+      });
+      break;
+    }
   }
 });
 
 botly.on("postback", async (senderId, message, postback) => {
-	if (message.recipient.id == "123123"){ // main
-
-  } else if (message.recipient.id == "105785155764332"){
-    
-  } else if (message.recipient.id == "132577573157975"){
-    const options = {
-      url: 'https://diffy.yacinedjenidi.repl.co/webhook',
-      method: 'POST',
-      json: { postback : {
-        postback,
-        message
-      } },
-    };
-    request(options, (error, response, body) => {
-      if (error) {
-        console.error('Error forwarding message:', error);
-      } else {
-        console.log('Message forwarded successfully:', body);
-      }
-    });
-  } else if (message.recipient.id == "100328361810049"){
-
-  } else if (message.recipient.id == "107789301758297"){
-    const options = {
-      url: 'https://torjmanix.onrender.com/webhook',
-      method: 'POST',
-      json: { postback : {
-        postback,
-        message
-      } },
-    };
-    request(options, (error, response, body) => {
-      if (error) {
-        console.error('Error forwarding message:', error);
-      } else {
-        console.log('Message forwarded successfully:', body);
-      }
-    });
+  for (const page of pageData.pages) {
+    if (message.recipient.id === page.id) {
+      const options = {
+        url: page.webhook,
+        method: 'POST',
+        json: { postback: { postback, message } },
+      };
+      request(options, (error, response, body) => {
+        if (error) {
+          console.error('Error forwarding postback:', error);
+        } else {
+          console.log('Postback forwarded successfully:', body);
+        }
+      });
+      break;
+    }
   }
 });
 
 app.listen(port || 3000, () => {
-  console.log(`App listening on port ${port}`)
-})
+  console.log(`App listening on port ${port}`);
+});
