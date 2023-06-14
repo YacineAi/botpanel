@@ -5,13 +5,13 @@ const bodyParser = require("body-parser");
 const request = require("request");
 const Botly = require("botly");
 const botly = new Botly({
-  accessToken: process.env.PAGE_ACCESS_TOKEN,
+  accessToken: "process.env.PAGE_ACCESS_TOKEN",
   verifyToken: process.env.VERIFY_TOKEN,
   webHookPath: process.env.WB_PATH,
   notificationType: Botly.CONST.REGULAR,
   FB_URL: "https://graph.facebook.com/v13.0/",
 });
-app.use(express.static('views'));
+//app.use(express.static('views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({
   verify: botly.getVerifySignature(process.env.APP_SECRET)
