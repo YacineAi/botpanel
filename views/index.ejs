@@ -9,13 +9,13 @@
     <meta property="og:image" content="https://via.placeholder.com/1200x630?text=%D9%85%D8%B2%D8%A7%D9%84%20%D9%85%D8%A7%D8%AE%D8%AF%D9%85%D8%AA%D9%87%D8%A7%D8%B4">
     <meta property="og:image:alt" content="Some bots panel">
     <meta property="og:url" content="https://notipanel.onrender.com">
-    <meta property="og:type" content="My Panel">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title>Dashboard</title>
 </head>
 <body class="flex w-screen h-screen bg-gray-900">
-  <div class="flex flex-col items-center justify-left w-16 h-full overflow-hidden text-gray-400 bg-gray-900">
+<!-- Nav -->
+<div class="flex flex-col items-center justify-left w-16 h-full overflow-hidden text-gray-400 bg-gray-900">
     <a class="flex items-center justify-center mt-3" href="#">
       <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
         <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
@@ -66,9 +66,15 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     </a>
-  </div>
+</div>
+<!-- Nav End -->
+<div class="absolute left-20 top-5 h-20 bg-gray-900">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Button
+  </button>
+</div>
 
-<div class="m-auto">
+<div class="absolute left-20 inset-x-20 top-20">
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-200 uppercase bg-gray-700">
@@ -250,7 +256,6 @@
     </div>
   </div>
 </div>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
