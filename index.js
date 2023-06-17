@@ -11,6 +11,7 @@ const botly = new Botly({
   notificationType: Botly.CONST.REGULAR,
   FB_URL: "https://graph.facebook.com/v13.0/",
 });
+const pageData = require('./pages.json');
 //app.use(express.static('views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({
@@ -19,10 +20,12 @@ app.use(bodyParser.json({
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/webhook", botly.router());
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { pages: pageData.pages });
+});
+app.get('/pages', (req, res) => {
+  res.json(pageData)
 });
 
-const pageData = require('./pages.json');
 
 botly.on("message", (senderId, message, data) => {
   for (const page of pageData.pages) {
