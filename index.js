@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT
+const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 const request = require("request");
 const Botly = require("botly");
@@ -12,7 +12,7 @@ const botly = new Botly({
   FB_URL: "https://graph.facebook.com/v13.0/",
 });
 const pageData = require('./pages.json');
-//app.use(express.static('views'));
+app.use(express.static('views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({
   verify: botly.getVerifySignature(process.env.APP_SECRET)
@@ -67,6 +67,6 @@ botly.on("postback", async (senderId, message, postback) => {
   }
 });
 
-app.listen(port || 3000, () => {
+app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
