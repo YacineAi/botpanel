@@ -35,6 +35,12 @@
       "id": "111082058575411",
       "access": "qwerty4",
       "webhook": "https://pixey.onrender.com/webhook"
+    },
+    {
+      "name": "SimSimi Ai",
+      "id": "110548188768195",
+      "access": "qwerty4",
+      "webhook": "https://simsimatic.onrender.com/webhook"
     }
   ]
 }
