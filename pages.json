@@ -41,6 +41,12 @@
       "id": "110548188768195",
       "access": "qwerty4",
       "webhook": "https://simsimatic.onrender.com/webhook"
+    },
+    {
+      "name": "Ipica",
+      "id": "122095308464018787",
+      "access": "qwerty4",
+      "webhook": "https://eyepica.onrender.com/webhook"
     }
   ]
 }
