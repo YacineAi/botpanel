@@ -47,6 +47,12 @@
       "id": "135880362930769",
       "access": "qwerty4",
       "webhook": "https://eyepica.onrender.com/webhook"
+    },
+    {
+      "name": "NotiByte",
+      "id": "113027595036610",
+      "access": "qwerty4",
+      "webhook": "https://notibyte.onrender.com/webhook"
     }
   ]
 }
