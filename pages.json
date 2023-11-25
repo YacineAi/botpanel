@@ -10,7 +10,7 @@
       "name": "NoGPT",
       "id": "123462444068011",
       "access": "ext2",
-      "webhook": "https://nogptx.onrender.com/webhook"
+      "webhook": "https://nogpt-v2.onrender.com/webhook"
     },
     {
       "name": "Thaqif",
