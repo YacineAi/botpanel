@@ -53,6 +53,12 @@
       "id": "113027595036610",
       "access": "qwerty4",
       "webhook": "https://notibyte.onrender.com/webhook"
+    },
+    {
+      "name": "Noti+",
+      "id": "111989398497822",
+      "access": "qwerty4",
+      "webhook": "https://notiplus-lvcz.onrender.com/webhook"
     }
   ]
 }
