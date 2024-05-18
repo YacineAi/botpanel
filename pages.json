@@ -59,6 +59,12 @@
       "id": "111989398497822",
       "access": "qwerty4",
       "webhook": "https://notifeed-0dmb.onrender.com/webhook"
+    },
+    {
+      "name": "Minha News",
+      "id": "284556534746472",
+      "access": "qwerty4",
+      "webhook": "https://anemdz.onrender.com/webhook"
     }
   ]
 }
